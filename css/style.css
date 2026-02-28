@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/*titulos
+font-family: "Playfair Display" */
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap');
+/*parrafos "Andada Pro", serif;*/
+
+/*fuentes general
+#F5F5F0 blanco
+#E6D8C3 beige
+#C2A68C marron
+#5D866C
+verde
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #F5F5F0;
+    font-family: "Andada Pro", serif;
+}
+
+/*TIPOGRAFIA GENERAL*/
+
+h1 {
+    color: #5D866C;
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+h2 {
+    color: #5D866C;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+h3 {
+    color: #5D866C;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    padding: 0 0 3px 0;
+}
+
+.tipografia {
+    color: #81674e;
+    font-family: "Andada Pro", serif;
+    text-align: justify;
+}
+
+p {
+    padding: 0 2% 10px 2%;
+    /* Quitamos padding superior para que no baje */
+    margin: 0;
+    text-align: justify;
+    font-family: "Andada Pro", serif;
+    color: #81674e;
+}
+
+ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    height: 90px;
+    background-color: #c3e6c8;
+}
+
+header ul {
+    font-family: "Andada Pro", serif;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    margin-right: 1.5rem;
+}
+
+header a {
+    text-decoration: none;
+    color: #5D866C;
+    font-weight: bold;
+}
+
+.fondo {
+    background-color: #c3e6c8;
+}
+
+/*Main*/
+main {
+    text-align: center;
+    background-color: #F5F5F0;
+    display: flow-root;
+}
+
+/*imagenes*/
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.presentacion {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.redes {
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 10px;
+    object-fit: contain;
+}
+
+/*grids*/
+.hombre1,
+.hombre2,
+.hombre3,
+.mujer1,
+.mujer2,
+.mujer3,
+.nena,
+.nene,
+.unisex {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 45% 45%;
+    /* Forzamos a que las filas de contenido sean flexibles pero pegadas arriba */
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    /* IMPORTANTE: Alinea todo al inicio de la celda para que el texto no baje */
+    align-items: start;
+}
+
+.tituloh1,
+.tituloh2,
+.tituloh3,
+.titulom1,
+.titulom2,
+.titulom3,
+.tituloa,
+.tituloe,
+.titulox {
+    grid-area: titulo;
+    align-self: center;
+    /* El título sí lo centramos */
+    padding-bottom: 10px;
+}
+
+.imgh1,
+.imgh2,
+.imgh3,
+.imgm1,
+.imgm2,
+.imgm3,
+.imga,
+.imge,
+.imgx {
+    grid-area: img;
+}
+
+[class^="img"] img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+.textoh1,
+.textoh2,
+.textoh3,
+.textom1,
+.textom2,
+.textom3,
+.textoa,
+.textoe,
+.textox {
+    grid-area: texto;
+    /* Forzamos a que este bloque empiece arriba de su celda */
+    align-self: start;
+}
+
+.ingredientesh1,
+.ingredientesh2,
+.ingredientesh3,
+.ingredientesm1,
+.ingredientesm2,
+.ingredientesm3,
+.ingredientesa,
+.ingredientese,
+.ingredientesx {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.comprah1,
+.comprah2,
+.comprah3,
+.compram1,
+.compram2,
+.compram3,
+.compraa,
+.comprae,
+.comprax {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+button {
+    background-color: #5D866C;
+    color: #F5F5F0;
+    border: none;
+    padding: 8px 20px;
+    font-family: "Andada Pro", serif;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #c3e6c8;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+}
+
+/*MOBILE*/
+
+@media (max-width: 480px) {
+
+    header {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hombre1,
+    .hombre2,
+    .hombre3,
+    .mujer1,
+    .mujer2,
+    .mujer3,
+    .nena,
+    .nene,
+    .unisex {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "titulo"
+            "img"
+            "texto"
+            "ingredientes"
+            "compra";
+        width: 100%;
+        align-items: center;
+        /* En mobile sí centramos */
+    }
+
+    [class^="img"] img {
+        max-width: 200px;
+    }
+
+    p {
+        padding: 15px 5%;
+    }
+}
+
+
+#carouselPerfumeria {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.carousel-inner img {
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}

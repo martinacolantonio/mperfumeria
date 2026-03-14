@@ -1,0 +1,261 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #F5F5F0;
+  font-family: "Andada Pro", serif;
+}
+
+/* TIPOGRAFÍAS HEADER (unificadas) */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  height: 80px;
+  background-color: #c3e6c8;
+}
+header .logo {
+  width: 100px;
+  height: auto;
+}
+header .logo img {
+  width: 100%;
+  height: auto;
+}
+header ul {
+  font-family: "Andada Pro", serif;
+  display: flex;
+  list-style: none;
+}
+header li {
+  margin-right: 1.5rem;
+}
+header a {
+  text-decoration: none;
+  color: #5D866C;
+  font-weight: normal;
+  font-family: "Andada Pro", serif;
+}
+
+/* TITULOS */
+h1 {
+  color: #5D866C;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+}
+
+h2 {
+  color: #5D866C;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  text-align: center;
+  padding: 2rem 0;
+  font-weight: normal;
+}
+
+h3 {
+  color: #5D866C;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+}
+
+/* PÁRRAFOS Y LISTAS - COLOR MARRÓN */
+p,
+.tipografía,
+ul,
+label {
+  color: #C2A68C;
+  font-family: "Andada Pro", serif;
+}
+
+/* GRID */
+.hombre1,
+.hombre2,
+.hombre3,
+.mujer1,
+.mujer2,
+.mujer3,
+.nena,
+.nene,
+.unisex {
+  display: grid;
+  grid-template-areas: "titulo titulo" "img texto" "img ingredientes" "compra compra";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto min-content min-content auto;
+  column-gap: 2%;
+  row-gap: 10px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.tituloh1,
+.tituloh2,
+.tituloh3,
+.titulom1,
+.titulom2,
+.titulom3,
+.tituloe,
+.tituloa,
+.titulox {
+  grid-area: titulo;
+}
+
+.imgh1,
+.imgh2,
+.imgh3,
+.imgm1,
+.imgm2,
+.imgm3,
+.imga,
+.imge,
+.imgx {
+  grid-area: img;
+  width: 100%;
+}
+
+.textoh1,
+.textoh2,
+.textoh3,
+.textom1,
+.textom2,
+.textom3,
+.textoa,
+.textoe,
+.textox {
+  grid-area: texto;
+}
+
+.ingredientesh1,
+.ingredientesh2,
+.ingredientesh3,
+.ingredientesm1,
+.ingredientesm2,
+.ingredientesm3,
+.ingredientesa,
+.ingredientese,
+.ingredientesx {
+  grid-area: ingredientes;
+}
+
+.comprah1,
+.comprah2,
+.comprah3,
+.compram1,
+.compram2,
+.compram3,
+.compraa,
+.comprae,
+.comprax {
+  grid-area: compra;
+  justify-content: center;
+  display: flex;
+}
+
+/* ANIMACION IMÁGENES PRODUCTOS */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.producto {
+  animation: aparecer 1s ease-in-out;
+}
+
+/* BOTÓN */
+input[type=submit] {
+  background-color: #5D866C;
+  color: #F5F5F0;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Andada Pro", serif;
+  transition: transform 0.2s;
+}
+input[type=submit]:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background-color: #c3e6c8;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .redes {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  object-fit: contain;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    padding: 15px;
+    text-align: center; /* Centra el texto del logo/título */
+  }
+  /* Ajuste del Grid de Productos */
+  .hombre1, .hombre2, .hombre3,
+  .mujer1, .mujer2, .mujer3,
+  .nena, .nene, .unisex {
+    grid-template-columns: 1fr; /* Forzamos una sola columna */
+    grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+    width: 100%;
+    display: flex; /* Cambiar a flex puede ser más fácil para centrar todo en mobile */
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centra los textos y párrafos */
+  }
+  /* Centrar la imagen específicamente */
+  [class^=imgh], [class^=imgm], [class^=imga], [class^=imge], [class^=imgx] {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  [class^=imgh] img, [class^=imgm] img, [class^=imga] img, [class^=imge] img, [class^=imgx] img {
+    max-width: 280px; /* Un poco más grande para que luzca mejor */
+    height: auto;
+  }
+  /* Quitar el padding lateral excesivo si lo hubiera y centrar listas */
+  p {
+    padding: 10px 10%;
+    text-align: center;
+  }
+  ul {
+    list-style: none; /* A veces los puntos de la lista descentran el texto */
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  /* Centrar la sección de compra (tamaños y botón) */
+  [class^=compra] {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

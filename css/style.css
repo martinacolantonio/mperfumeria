@@ -132,23 +132,14 @@ main {
 }
 
 /*grids*/
-.hombre1,
-.hombre2,
-.hombre3,
-.mujer1,
-.mujer2,
-.mujer3,
-.nena,
-.nene,
-.unisex {
+.hombre1 {
     display: grid;
     grid-template-areas:
         "titulo titulo"
         "img texto"
         "img ingredientes"
         "compra compra";
-    grid-template-columns: 45% 45%;
-    /* Forzamos a que las filas de contenido sean flexibles pero pegadas arriba */
+    grid-template-columns: 35% 65%;
     grid-template-rows: auto min-content min-content auto;
     column-gap: 2%;
     row-gap: 10px;
@@ -157,65 +148,553 @@ main {
     margin: 0 auto 0 auto;
     padding-bottom: 3rem;
     justify-content: center;
-    /* IMPORTANTE: Alinea todo al inicio de la celda para que el texto no baje */
     align-items: start;
 }
 
-.tituloh1,
-.tituloh2,
-.tituloh3,
-.titulom1,
-.titulom2,
-.titulom3,
-.tituloa,
-.tituloe,
-.titulox {
+.tituloh1 {
     grid-area: titulo;
     align-self: center;
-    /* El título sí lo centramos */
     padding-bottom: 10px;
 }
 
-.imgh1,
-.imgh2,
-.imgh3,
-.imgm1,
-.imgm2,
-.imgm3,
-.imga,
-.imge,
+.imgh1 {
+
+    grid-area: img;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textoh1 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesh1 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.comprah1 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.hombre2 {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.tituloh2 {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imgh2 {
+    grid-area: img;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textoh2 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesh2 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.comprah2 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.hombre3 {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.tituloh3 {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imgh3 {
+    grid-area: img;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textoh3 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesh3 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.comprah3 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.mujer1 {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.titulom1 {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imgm1 {
+    grid-area: img;
+
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textom1 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesm1 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.compram1 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.mujer2 {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.titulom2 {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imgm2 {
+    grid-area: img;
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textom2 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesm2 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.compram2 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.mujer3 {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.titulom3 {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imgm3 {
+    grid-area: img;
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textom3 {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesm3 {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.compram3 {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.nena {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.tituloa {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imga {
+    grid-area: img;
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textoa {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientesa {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.compraa {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.nene {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.tituloe {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imge {
+    grid-area: img;
+}
+
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[class^="img"] img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
+
+.textoe {
+    grid-area: texto;
+
+    align-self: start;
+}
+
+.ingredientese {
+    grid-area: ingredientes;
+    text-align: left;
+    padding-left: 2%;
+    align-self: start;
+}
+
+.comprae {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 15px;
+}
+
+.unisex {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto min-content min-content auto;
+    column-gap: 2%;
+    row-gap: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.titulox {
+    grid-area: titulo;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
 .imgx {
     grid-area: img;
 }
 
+
+[class^="img"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 [class^="img"] img {
-    width: 100%;
-    max-width: 280px;
+    width: 200px;
+    max-width: 200px;
     height: auto;
 }
 
-.textoh1,
-.textoh2,
-.textoh3,
-.textom1,
-.textom2,
-.textom3,
-.textoa,
-.textoe,
 .textox {
     grid-area: texto;
-    /* Forzamos a que este bloque empiece arriba de su celda */
+
     align-self: start;
 }
 
-.ingredientesh1,
-.ingredientesh2,
-.ingredientesh3,
-.ingredientesm1,
-.ingredientesm2,
-.ingredientesm3,
-.ingredientesa,
-.ingredientese,
 .ingredientesx {
     grid-area: ingredientes;
     text-align: left;
@@ -223,14 +702,6 @@ main {
     align-self: start;
 }
 
-.comprah1,
-.comprah2,
-.comprah3,
-.compram1,
-.compram2,
-.compram3,
-.compraa,
-.comprae,
 .comprax {
     grid-area: compra;
     display: flex;
@@ -298,7 +769,7 @@ footer {
             "compra";
         width: 100%;
         align-items: center;
-        /* En mobile sí centramos */
+
     }
 
     [class^="img"] img {

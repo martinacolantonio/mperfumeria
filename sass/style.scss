@@ -1,20 +1,22 @@
 @import "variables";
 @import "mixins";
 
+/* REGLAS GLOBALES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    max-width: 100vw;
     overflow-x: hidden;
     width: 100%;
     background-color: $blanco;
     font-family: $fuenteParrafos;
 }
 
-/* TIPOGRAFÍAS HEADER (unificadas) */
+/* HEADER */
 header {
     display: flex;
     align-items: center;
@@ -24,7 +26,7 @@ header {
     background-color: $verdeHeader;
 
     .logo {
-        width: 100px; // Tamaño fijo del logo
+        width: 100px;
         height: auto;
         img {
             width: 100%;
@@ -36,21 +38,21 @@ header {
         font-family: $fuenteParrafos;
         display: flex;
         list-style: none;
-    }
-
-    li {
-        margin-right: 1.5rem;
-    }
-
-    a {
-        text-decoration: none;
-        color: $verde;
-        font-weight: normal;
-        font-family: $fuenteParrafos;
+        
+        li {
+            margin-right: 1.5rem;
+            
+            a {
+                text-decoration: none;
+                color: $verde;
+                font-weight: normal;
+                font-family: $fuenteParrafos;
+            }
+        }
     }
 }
 
-/* TITULOS */
+/* TIPOGRAFÍAS */
 h1 {
     color: $verde;
     font-family: $fuenteTitulos;
@@ -64,7 +66,7 @@ h2 {
     text-decoration: underline;
     text-align: center;
     padding: 2rem 0;
-    font-weight: normal; // Todos los títulos iguales
+    font-weight: normal;
 }
 
 h3 {
@@ -73,12 +75,8 @@ h3 {
     font-size: 1.8rem;
 }
 
-/* PÁRRAFOS Y LISTAS - COLOR MARRÓN */
-p, 
-.tipografía, 
-ul, 
-label {
-    color: $marron; // Mantener texto marrón
+p, .tipografía, ul, label {
+    color: $marron;
     font-family: $fuenteParrafos;
 }
 
@@ -171,9 +169,10 @@ label {
     grid-area: compra;
     justify-content: center;
     display: flex;
+
 }
 
-/* ANIMACION IMÁGENES PRODUCTOS */
+/* ANIMACION */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -189,84 +188,76 @@ label {
     animation: aparecer 1s ease-in-out;
 }
 
-/* BOTÓN */
 input[type="submit"] {
     @include botonPerfume;
 }
 
-/* FOOTER */
+/* FOOTER BASE */
 footer {
     background-color: $verdeHeader;
-    height: 80px;
+    min-height: 80px; // Cambiado de height a min-height
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+
+    .redes {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        object-fit: contain;
+    }
 }
 
-footer .redes {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-    object-fit: contain;
-}
-
-/* MOBILE */
+/* --- MEDIA QUERY MOBILE --- */
 @media (max-width: 480px) {
-
     header {
         flex-direction: column;
         height: auto;
-        gap: 1rem;
-        padding: 15px;
-        text-align: center; /* Centra el texto del logo/título */
+        padding: 20px;
+        ul {
+            margin-top: 10px;
+            li { margin: 0 10px; }
+        }
     }
 
-    /* Ajuste del Grid de Productos */
     .hombre1, .hombre2, .hombre3,
     .mujer1, .mujer2, .mujer3,
     .nena, .nene, .unisex {
-        grid-template-columns: 1fr; /* Forzamos una sola columna */
-        grid-template-areas:
-            "titulo"
-            "img"
-            "texto"
-            "ingredientes"
-            "compra";
-        width: 100%;
-        display: flex;       /* Cambiar a flex puede ser más fácil para centrar todo en mobile */
-        flex-direction: column; 
+        display: flex; // Cambiamos Grid por Flex en mobile
+        flex-direction: column;
         align-items: center;
-        text-align: center;  /* Centra los textos y párrafos */
-    }
+        text-align: center;
 
-    /* Centrar la imagen específicamente */
-    [class^="imgh"], [class^="imgm"], [class^="imga"], [class^="imge"], [class^="imgx"] {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        
-        img {
-            max-width: 280px; /* Un poco más grande para que luzca mejor */
+        [class^="img"] img {
+            max-width: 280px;
             height: auto;
         }
     }
 
-    /* Quitar el padding lateral excesivo si lo hubiera y centrar listas */
-    p {
-        padding: 10px 10%;
-        text-align: center;
-    }
+    footer {
+        height: auto; // IMPORTANTE: Quitamos los 80px fijos
+        padding: 40px 20px;
+        flex-direction: column; // Apilado vertical
+        gap: 20px;
 
-    ul {
-        list-style: none; /* A veces los puntos de la lista descentran el texto */
-        padding: 0;
-        margin-bottom: 1rem;
-    }
+        h2 {
+            font-size: 1.8rem;
+            padding: 0;
+            text-decoration: none;
+        }
 
-    /* Centrar la sección de compra (tamaños y botón) */
-    [class^="compra"] {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        .redes {
+            margin: 10px 0;
+            width: 40px;
+            height: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border: none;
+        }
     }
 }

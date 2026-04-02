@@ -1,0 +1,153 @@
+@use "variables";
+@use "mixins";
+
+.hombre1,
+.hombre2,
+.hombre3,{
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "texto img"
+        "ingredientes img"
+        "compra compra";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 5%;
+    row-gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    align-items: start;
+
+    @include mixins.dispositivos(tablet) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+        text-align: center;
+    }
+}
+.mujer1,
+.mujer2,
+.mujer3,{
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img texto"
+        "img ingredientes"
+        "compra compra";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 5%;
+    row-gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    align-items: start;
+
+    @include mixins.dispositivos(tablet) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+        text-align: center;
+    }
+}
+.nena,
+.nene,
+.unisex {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "img compra"
+        "img texto"
+        "img ingredientes";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 5%;
+    row-gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    align-items: start;
+
+    @include mixins.dispositivos(tablet) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+        text-align: center;
+    }
+}
+
+.tituloh1,
+.tituloh2,
+.tituloh3,
+.titulom1,
+.titulom2,
+.titulom3,
+.tituloe,
+.tituloa,
+.titulox {
+    grid-area: titulo;
+}
+
+.imgh1,
+.imgh2,
+.imgh3,
+.imgm1,
+.imgm2,
+.imgm3,
+.imga,
+.imge,
+.imgx {
+    grid-area: img;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+.textoh1,
+.textoh2,
+.textoh3,
+.textom1,
+.textom2,
+.textom3,
+.textoa,
+.textoe,
+.textox {
+    grid-area: texto;
+}
+
+.ingredientesh1,
+.ingredientesh2,
+.ingredientesh3,
+.ingredientesm1,
+.ingredientesm2,
+.ingredientesm3,
+.ingredientesa,
+.ingredientese,
+.ingredientesx {
+    grid-area: ingredientes;
+}
+
+.comprah1,
+.comprah2,
+.comprah3,
+.compram1,
+.compram2,
+.compram3,
+.compraa,
+.comprae,
+.comprax {
+    grid-area: compra;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    input[type="submit"] {
+        @include mixins.botonPerfume;
+    }
+}

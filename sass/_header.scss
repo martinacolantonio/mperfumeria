@@ -1,0 +1,89 @@
+@use "variables";
+@use "mixins";
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    height: 100px; 
+    background-color: variables.$verdeHeader;
+    border-bottom: 2px solid variables.$verde;
+
+    
+    .logo {
+        width: 80px;
+        height: auto;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+    }
+
+    
+    h1 {
+        color: variables.$verde;
+        font-family: variables.$fuenteTitulos;
+        font-size: 2rem;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        
+        @include mixins.brilloTexto;
+    }
+
+    
+    nav {
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: variables.$verde;
+                    font-family: variables.$fuenteParrafos;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: variables.$marron;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    @include mixins.dispositivos(mobile) {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        gap: 15px;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                li {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

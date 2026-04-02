@@ -1,0 +1,50 @@
+@use "variables";
+
+/* 1. ANIMACIÓN DE ENTRADA (Al cargar la página) */
+@keyframes aparecer {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* 2. ANIMACIÓN DE REVELADO (Al hacer scroll) */
+@keyframes revelarElemento {
+    from { 
+        opacity: 0; 
+        scale: 0.9; 
+    }
+    to { 
+        opacity: 1; 
+        scale: 1; 
+    }
+}
+
+/* APLICACIÓN A LOS PRODUCTOS */
+/* Como en tu HTML tenés <img class="producto ...">, esto activará el efecto lento */
+.producto {
+    animation: aparecer 1.8s ease-out; /* 1.8 segundos para que sea bien lento */
+    animation-fill-mode: both;
+}
+
+/* EFECTO DE SCROLL (Opcional, suma puntos para el final) */
+/* Esto hace que los títulos y fotos se revelen mientras bajás la pantalla */
+[class^="img"], [class^="titulo"] {
+    img, & {
+        animation: revelarElemento linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
+    }
+}
+
+/* ESTILO DEL BOTÓN (Para asegurar que no se rompa nada) */
+input[type="submit"] {
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
+}

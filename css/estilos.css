@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* REGLAS GLOBALES */
 * {
   margin: 0;
   padding: 0;
@@ -14,39 +13,6 @@ html, body {
   font-family: "Andada Pro", serif;
 }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 5%;
-  height: 80px;
-  background-color: #c3e6c8;
-}
-header .logo {
-  width: 100px;
-  height: auto;
-}
-header .logo img {
-  width: 100%;
-  height: auto;
-}
-header ul {
-  font-family: "Andada Pro", serif;
-  display: flex;
-  list-style: none;
-}
-header ul li {
-  margin-right: 1.5rem;
-}
-header ul li a {
-  text-decoration: none;
-  color: #5D866C;
-  font-weight: normal;
-  font-family: "Andada Pro", serif;
-}
-
-/* TIPOGRAFÍAS */
 h1 {
   color: #5D866C;
   font-family: "Playfair Display", serif;
@@ -57,10 +23,8 @@ h2 {
   color: #5D866C;
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  text-decoration: underline;
   text-align: center;
   padding: 2rem 0;
-  font-weight: normal;
 }
 
 h3 {
@@ -69,33 +33,163 @@ h3 {
   font-size: 1.8rem;
 }
 
-p, .tipografía, ul, label {
+p, .tipografia, ul, label {
   color: #C2A68C;
   font-family: "Andada Pro", serif;
 }
 
-/* GRID */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  height: 100px;
+  background-color: #c3e6c8;
+  border-bottom: 2px solid #5D866C;
+}
+header .logo {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+header .logo:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+header h1 {
+  color: #5D866C;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@keyframes brilloDestello {
+  0%, 100% {
+    color: #5D866C;
+    text-shadow: none;
+  }
+  50% {
+    color: #F5F5F0;
+    text-shadow: 0 0 10px #F5F5F0, 0 0 20px #F5F5F0;
+  }
+}
+header h1 {
+  animation: brilloDestello 3s infinite ease-in-out;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #5D866C;
+  font-family: "Andada Pro", serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: #C2A68C;
+  text-decoration: underline;
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    gap: 15px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  header nav ul li {
+    margin: 0;
+  }
+}
+
 .hombre1,
 .hombre2,
-.hombre3,
-.mujer1,
-.mujer2,
-.mujer3,
-.nena,
-.nene,
-.unisex {
+.hombre3 {
   display: grid;
-  grid-template-areas: "titulo titulo" "img texto" "img ingredientes" "compra compra";
+  grid-template-areas: "titulo titulo" "texto img" "ingredientes img" "compra compra";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto min-content min-content auto;
-  column-gap: 2%;
-  row-gap: 10px;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 5%;
+  row-gap: 25px;
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
   padding-bottom: 3rem;
-  justify-content: center;
   align-items: start;
+}
+@media (max-width: 1024px) {
+  .hombre1,
+  .hombre2,
+  .hombre3 {
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+    text-align: center;
+  }
+}
+
+.mujer1,
+.mujer2,
+.mujer3 {
+  display: grid;
+  grid-template-areas: "titulo titulo" "img texto" "img ingredientes" "compra compra";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 5%;
+  row-gap: 25px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .mujer1,
+  .mujer2,
+  .mujer3 {
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+    text-align: center;
+  }
+}
+
+.nena,
+.nene,
+.unisex {
+  display: grid;
+  grid-template-areas: "titulo titulo" "img compra" "img texto" "img ingredientes";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 5%;
+  row-gap: 25px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .nena,
+  .nene,
+  .unisex {
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "img" "texto" "ingredientes" "compra";
+    text-align: center;
+  }
 }
 
 .tituloh1,
@@ -121,6 +215,19 @@ p, .tipografía, ul, label {
 .imgx {
   grid-area: img;
   width: 100%;
+}
+.imgh1 img,
+.imgh2 img,
+.imgh3 img,
+.imgm1 img,
+.imgm2 img,
+.imgm3 img,
+.imga img,
+.imge img,
+.imgx img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .textoh1,
@@ -157,26 +264,20 @@ p, .tipografía, ul, label {
 .comprae,
 .comprax {
   grid-area: compra;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-
-/* ANIMACION */
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.producto {
-  animation: aparecer 1s ease-in-out;
-}
-
-input[type=submit] {
+.comprah1 input[type=submit],
+.comprah2 input[type=submit],
+.comprah3 input[type=submit],
+.compram1 input[type=submit],
+.compram2 input[type=submit],
+.compram3 input[type=submit],
+.compraa input[type=submit],
+.comprae input[type=submit],
+.comprax input[type=submit] {
   background-color: #5D866C;
   color: #F5F5F0;
   border: none;
@@ -186,11 +287,18 @@ input[type=submit] {
   font-family: "Andada Pro", serif;
   transition: transform 0.2s;
 }
-input[type=submit]:hover {
+.comprah1 input[type=submit]:hover,
+.comprah2 input[type=submit]:hover,
+.comprah3 input[type=submit]:hover,
+.compram1 input[type=submit]:hover,
+.compram2 input[type=submit]:hover,
+.compram3 input[type=submit]:hover,
+.compraa input[type=submit]:hover,
+.comprae input[type=submit]:hover,
+.comprax input[type=submit]:hover {
   transform: scale(1.05);
 }
 
-/* FOOTER BASE */
 footer {
   background-color: #c3e6c8;
   min-height: 80px;
@@ -198,6 +306,7 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 20px;
 }
 footer .redes {
   width: 30px;
@@ -206,55 +315,56 @@ footer .redes {
   object-fit: contain;
 }
 
-/* --- MEDIA QUERY MOBILE --- */
 @media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  header ul {
-    margin-top: 10px;
-  }
-  header ul li {
-    margin: 0 10px;
-  }
-  .hombre1, .hombre2, .hombre3,
-  .mujer1, .mujer2, .mujer3,
-  .nena, .nene, .unisex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .hombre1 [class^=img] img, .hombre2 [class^=img] img, .hombre3 [class^=img] img,
-  .mujer1 [class^=img] img, .mujer2 [class^=img] img, .mujer3 [class^=img] img,
-  .nena [class^=img] img, .nene [class^=img] img, .unisex [class^=img] img {
-    max-width: 280px;
-    height: auto;
-  }
   footer {
-    height: auto;
-    padding: 40px 20px;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
-  footer h2 {
-    font-size: 1.8rem;
-    padding: 0;
-    text-decoration: none;
+}
+/* 1. ANIMACIÓN DE ENTRADA (Al cargar la página) */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  footer .redes {
-    margin: 10px 0;
-    width: 40px;
-    height: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  footer iframe {
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    border: none;
+}
+/* 2. ANIMACIÓN DE REVELADO (Al hacer scroll) */
+@keyframes revelarElemento {
+  from {
+    opacity: 0;
+    scale: 0.9;
   }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/* APLICACIÓN A LOS PRODUCTOS */
+/* Como en tu HTML tenés <img class="producto ...">, esto activará el efecto lento */
+.producto {
+  animation: aparecer 1.8s ease-out; /* 1.8 segundos para que sea bien lento */
+  animation-fill-mode: both;
+}
+
+/* EFECTO DE SCROLL (Opcional, suma puntos para el final) */
+/* Esto hace que los títulos y fotos se revelen mientras bajás la pantalla */
+[class^=img] img, [class^=img], [class^=titulo] img, [class^=titulo] {
+  animation: revelarElemento linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+/* ESTILO DEL BOTÓN (Para asegurar que no se rompa nada) */
+input[type=submit] {
+  transition: transform 0.3s ease;
+}
+input[type=submit]:hover {
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=estilos.css.map */
